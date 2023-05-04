@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+	<script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Yeon+Sung&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+</head>
+   
+    <body>
+   
+   
+      <div class="wrapper">
+        <div class="loader"></div>
+    </div>
+    <nav>
+      <a href="./index.html" class="logo">WYN</a>
+        <ul>
+            <li><a class="active" id="li" href="./index.html">Home</a></li>
+            <li><a class="active" id="li" href="#projects">Projects</a></li>
+            <li><a class="active" id="li" href="#about">About Us</a></li>
+            <li><a class="active" id="li" href="#contact">Contact Us</a></li>
+        </ul>
+      <!-------Toggle Bar--> 
+      <div class="toggle"></div>  
+    </nav>
+    <p class="u-line"></p>
+
+<!------Home-->
+  <div class="home">
+    <div class="right-content">
+        <p>Ecommerce, Blog, Landing Page, Etc..,</p>
+        <p>We make</p>
+        <p class="font">The <span>W</span>ebsite <span>Y</span>ou <span>N</span>eed</p>
+    </div>
+  </div> 
+
+<!------Projects-->
+<section id="projects" class="projects">
+    <h2>Projects</h2>
+      <div class="projects-box">
+        <p>Our recent projects are below</p>
+        <p>(click on the slides to view full project)</p>
+        <div class="new-projects">
+          <div class="stopnjoy" style="max-width:500px">
+            <a href="#">
+                <img class="mySlides" src="./Assets/stopnjoy.png" style="width:100%">
+                <img class="mySlides" src="./Assets/stopnjoy1.png" style="width:100%">
+                <img class="mySlides" src="./Assets/stopnjoy2.png" style="width:100%">
+                <span class="tooltiptext">Stop n Joy</span>  
+            </a>  
+          </div>
+          <div class="stopnjoy1" style="max-width:500px">
+            <a href="#">
+              <img class="mySlides1" src="./Assets/stopnjoy.png" style="width:100%">
+              <img class="mySlides1" src="./Assets/stopnjoy1.png" style="width:100%">
+              <img class="mySlides1" src="./Assets/stopnjoy2.png" style="width:100%">
+              <span class="tooltiptext">Stop n Joy</span> 
+            </a>
+          </div>
+          <div class="stopnjoy2" style="max-width:500px">
+            <a href="#">
+              <img class="mySlides2" src="./Assets/stopnjoy.png" style="width:100%">
+              <img class="mySlides2" src="./Assets/stopnjoy1.png" style="width:100%">
+              <img class="mySlides2" src="./Assets/stopnjoy2.png" style="width:100%">
+              <span class="tooltiptext">Stop n Joy</span> 
+            </a>
+          </div>  
+        </div>
+        <p>loading...</p>
+      </div>      
+</section>
+<!----------About us-->
+<div id="about" class="about">
+  <h2>About us</h2>
+  <h3>WYN Team</h3>
+  <div class="about-box">
+    <div class="team">
+      <img src="./Assets/sha.jpg" alt=""><br>
+      <p class="title">Shahul hameed S</p>
+      <p class="sub-title">Front-end Dev</p>
+    </div>
+    <div class="team">
+      <img src="./Assets/sha.jpg" alt=""><br>
+      <p class="title">Shahul hameed S</p>
+      <p class="sub-title">Front-end Dev</p>
+    </div>
+  </div>
+  <p>A small but powerfull team</p>
+</div>
+<footer class="contact" id="contact">
+  <div class="contact-us">
+    <h2>Contact us</h2>
+  </div>
+  <div class="form">
+    
+    <h4>Send your message <br>to us</h4>
+    <form action="#" method="post">
+      <input type="text" name="name" id="name" placeholder="name" required>
+      <input type="number" name="number" id="phone" placeholder="phone" required>
+      <input type="email" name="email" id="email" placeholder="email" required> 
+      <textarea name="message" id="message" cols="25" rows="5" placeholder="Your message" required></textarea>
+      <input type="submit" value="submit">
+    </form>
+  </div>
+  <div class="email-number">
+  </div>
+  <div class="social-media">
+
+  </div>
+  <p>Copyright <span class="c-code">&#169;</span> 2023 by WYN Team</p>
+</footer>
+
+    <script src="./js/JQuery.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $('.toggle').toggleClass('active')
+                $('nav').toggleClass('active')
+            })
+        })
+
+        $("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+}, 1500);
+
+const fadeOut = () => {
+    const loadWallpaper = document.querySelector('.wrapper');
+    loadWallpaper.classList.add('fade');
+}
+window.addEventListener('load', fadeOut)
+
+
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 10000); // Change image every 2 seconds
+}
+var Index = 0;
+carousel1();
+
+function carousel1() {
+  var i;
+  var y = document.getElementsByClassName("mySlides1");
+  for (i = 0; i < y.length; i++) {
+    y[i].style.display = "none";  
+  }
+  Index++;
+  if (Index > y.length) {Index = 1}    
+  y[Index-1].style.display = "block";  
+  setTimeout(carousel1, 10000); // Change image every 2 seconds
+}
+var Index1 = 0;
+carousel2();
+
+function carousel2() {
+  var i;
+  var z = document.getElementsByClassName("mySlides2");
+  for (i = 0; i < z.length; i++) {
+    z[i].style.display = "none";  
+  }
+  Index1++;
+  if (Index1 > z.length) {Index1 = 1}    
+  z[Index1-1].style.display = "block";  
+  setTimeout(carousel2, 10000); // Change image every 2 seconds
+}
+
+
+        </script>
+</body>
+</html>
